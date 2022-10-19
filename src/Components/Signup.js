@@ -11,13 +11,18 @@ import insta from '../Assets/Instagram.JPG';
 import Alert from '@mui/material/Alert';
 import TextField from '@mui/material/TextField';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Signup() {
 
     const useStyles = makeStyles({
         text1: {
             color: 'grey',
             textAlign: 'center'
+        },
+        card2: {
+            height: '10vh',
+            marginTop: '2%'
         }
     });
 
@@ -48,6 +53,13 @@ export default function Login() {
                     <CardContent>
                         <Typography className={classes.text1} variant="subtitle1">
                             By Signing Up , you agree to our Terms , Data Policy and Cookies Policy .
+                        </Typography>
+                    </CardContent>
+                </Card>
+                <Card variant='outlined' className={classes.card2}>
+                    <CardContent>
+                        <Typography className={classes.text1} variant="subtitle1">
+                            Having an account? <Link to="/login" style={{textDecoration:"none"}}>Login</Link>
                         </Typography>
                     </CardContent>
                 </Card>

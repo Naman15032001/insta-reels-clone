@@ -1,19 +1,31 @@
-.singupWrapper{
+.singupWrapper {
     display: flex;
     justify-content: center;
 }
 
-.signupCard{
+.signupCard {
     width: 27vw;
     margin-top: 5%;
 }
-.insta-logo{
+
+.insta-logo {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     margin-top: 3%;
 }
-.insta-logo img{
+
+.insta-logo img {
     width: 15vw;
+}
+
+@media only screen and (max-width:620px) {
+    .signupCard {
+        width: 60%;
+    }
+
+    .insta-logo img {
+        width: 35%;
+    }
 }
