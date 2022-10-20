@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -13,15 +14,20 @@ import TextField from '@mui/material/TextField';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { Link } from 'react-router-dom';
 import bg from '../Assets/insta.png'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext , Image} from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import img1 from '../Assets/img1.jpg';
 import img2 from '../Assets/img2.jpg';
 import img3 from '../Assets/img3.jpg';
 import img4 from '../Assets/img4.jpg';
 import img5 from '../Assets/img5.jpg';
+import { AuthContext } from '../Context/AuthContext';
 
 export default function Login() {
+
+    const store = useContext(AuthContext);
+
+    console.log(store);
 
     const useStyles = makeStyles({
         text1: {
@@ -56,11 +62,11 @@ export default function Login() {
                         touchEnabled={false}
                     >
                         <Slider>
-                            <Slide index={0}><Image src={img1}/></Slide>
-                            <Slide index={1}><Image src={img2}/></Slide>
-                            <Slide index={2}><Image src={img3}/></Slide>
-                            <Slide index={3}><Image src={img4}/></Slide>
-                            <Slide index={4}><Image src={img5}/></Slide>
+                            <Slide index={0}><Image src={img1} /></Slide>
+                            <Slide index={1}><Image src={img2} /></Slide>
+                            <Slide index={2}><Image src={img3} /></Slide>
+                            <Slide index={3}><Image src={img4} /></Slide>
+                            <Slide index={4}><Image src={img5} /></Slide>
                         </Slider>
                     </CarouselProvider>
 
