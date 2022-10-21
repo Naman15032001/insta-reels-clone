@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Switch>
-          <Route path="/login" component={Login}/>
-          <Route path="/signup" component={Singnup}/>
-          <PrivateRoute path="/" component={Feed}/>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Singnup} />
+          <PrivateRoute path="/" component={Feed} />
         </Switch>
       </AuthProvider>
 
