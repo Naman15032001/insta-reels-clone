@@ -5,6 +5,7 @@ import Login from './Components/Login'
 import Feed from './Components/Feed';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { AuthProvider } from './Context/AuthContext';
+import PrivateRoute from './Components/PrivateRoute';
 function App() {
   return (
     <BrowserRouter>
@@ -12,7 +13,7 @@ function App() {
         <Switch>
           <Route path="/login" component={Login}/>
           <Route path="/signup" component={Singnup}/>
-          <Route path="/" component={Feed}/>
+          <PrivateRoute path="/" component={Feed}/>
         </Switch>
       </AuthProvider>
 

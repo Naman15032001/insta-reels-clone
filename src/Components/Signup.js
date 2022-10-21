@@ -36,7 +36,7 @@ export default function Signup() {
     const [name, setName] = useState("");
     const [file, setFile] = useState(null);
     const [error, setError] = useState("");
-    const [loading, setLoading] = useState("");
+    const [loading, setLoading] = useState(false);
     const history = useHistory();
     const { signup } = useContext(AuthContext);
 
@@ -114,7 +114,7 @@ export default function Signup() {
 
                     </CardContent>
                     <CardActions>
-                        <Button color='primary' fullWidth={true} variant="contained" disable={loading} onClick={handleClick}>Sign Up</Button>
+                        <Button color='primary' fullWidth={true} variant="contained" disabled={loading} onClick={handleClick}>Sign Up</Button>
                     </CardActions>
                     <CardContent>
                         <Typography className={classes.text1} variant="subtitle1">
