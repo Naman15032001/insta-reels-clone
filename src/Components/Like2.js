@@ -34,7 +34,7 @@ function Like({ userData, postData }) {
             like != null ?
                 <>
                     {
-                        like == true ? <FavoriteIcon className={`like`} onClick={handleLike} /> : <FavoriteIcon className={`unlike`} onClick={handleLike} />
+                        like == true ? <FavoriteIcon style={{ padding: '1rem', paddingTop: '0.5rem' }} className={`like`} onClick={handleLike} /> : <FavoriteIcon className={`unlike`} style={{ padding: '1rem' , paddingTop: '0.5rem' }} onClick={handleLike} />
                     }
                 </> :
                 <></>
