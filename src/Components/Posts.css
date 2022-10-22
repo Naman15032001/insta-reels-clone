@@ -45,3 +45,38 @@
     cursor: pointer;
     color: white;
 }
+
+.chat-styling{
+    position: absolute;
+    bottom: 0.5%;
+    left: 25%;
+    color: white;
+}
+
+.modal-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.video-modal{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-modal{
+    width: 50%;
+    height: 100%;
+}
+
+.modal-video{
+    height: 100%;
+    width: 100%;
+}
+
+.video-modal video{
+    height: 85vh;
+}
