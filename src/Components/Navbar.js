@@ -22,6 +22,9 @@ import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { makeStyles } from '@mui/styles';
 import insta from '../Assets/Instagram.JPG';
+import HomeIcon from '@mui/icons-material/Home';
+import ExploreIcon from '@mui/icons-material/Explore';
+import Avatar from '@mui/material/Avatar';
 
 const useStyles = makeStyles({
     appb: {
@@ -38,6 +41,7 @@ const useStyles = makeStyles({
 });
 
 export default function Navbar({ userData }) {
+   // console.log(userData);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -56,6 +60,11 @@ export default function Navbar({ userData }) {
         setMobileMoreAnchorEl(null);
     };
 
+    const handleExplore = () => {
+        let win = window.open("https://www.google.com", '_blank');
+        win.focus();
+    }
+
     const handleMenuClose = () => {
         setAnchorEl(null);
         handleMobileMenuClose();
@@ -67,7 +76,7 @@ export default function Navbar({ userData }) {
 
     const handleProfile = () => {
 
-        history.push(`/profile/${userData.uid}`)
+        history.push(`/profile/${userData.userId}`)
 
     };
 
@@ -126,27 +135,15 @@ export default function Navbar({ userData }) {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="fixed" className={classes.appbb}>
+            <AppBar position="fixed" sx={{ background: 'white' }}>
                 <Toolbar>
-                    <div>
-                        <img src={insta} alt="" />
+                    <div style={{ marginLeft: '5%' }}>
+                        <img src={insta} style={{ width: '20vh' }} onClick={handleBannerClick} />
                     </div>
                     <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="error">
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            size="large"
-                            aria-label="show 17 new notifications"
-                            color="inherit"
-                        >
-                            <Badge badgeContent={17} color="error">
-                                <NotificationsIcon />
-                            </Badge>
-                        </IconButton>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' }, color: 'black', alignItems: 'center', marginRight: '4rem' }} >
+                        <HomeIcon onClick={handleBannerClick} sx={{ marginRight: '1.5rem', cursor: 'pointer' }} />
+                        <ExploreIcon onClick={handleExplore} sx={{ marginRight: '1.5rem', cursor: 'pointer' }} />
                         <IconButton
                             size="large"
                             edge="end"
@@ -156,10 +153,10 @@ export default function Navbar({ userData }) {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <AccountCircle />
+                            <Avatar src={userData.profilePic} sx={{ height: '2rem', width: '2rem' }} />
                         </IconButton>
                     </Box>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ display: { xs: 'flex', md: 'none' , color: 'black' } }}>
                         <IconButton
                             size="large"
                             aria-label="show more"
@@ -175,6 +172,6 @@ export default function Navbar({ userData }) {
             </AppBar>
             {renderMobileMenu}
             {renderMenu}
-        </Box>
+        </Box >
     );
 }
