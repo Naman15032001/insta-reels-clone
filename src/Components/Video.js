@@ -20,5 +20,6 @@ export default function Video(props) {
     return (
         <video src={props.src} onEnded={handleScroll} className="video-styling" muted="muted" onClick={handleClick} >
         </video>
+        
     )
 }
