@@ -7,6 +7,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { AuthProvider } from './Context/AuthContext';
 import PrivateRoute from './Components/PrivateRoute';
 import Profile from './Components/Profile';
+import Ioa from './Components/Ioa';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
 
       {/* <Singnup /> */}
     </BrowserRouter>
+
+    //<Ioa/>
 
   );
 }

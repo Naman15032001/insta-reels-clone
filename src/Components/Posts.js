@@ -47,6 +47,37 @@ function Posts({ userData }) {
         })
         return unsub
     }, [])
+
+    let options = {
+        threshold: 0.6
+    }
+
+    const callback = (entries) => {
+        entries.forEach((entry) => {
+            let ele = entry.target.childNodes[0];
+            ele.play().then(() => {
+                if (!ele.paused && !entry.isIntersecting) {
+                    ele.pause();
+                }
+            })
+        })
+    }
+
+    let observer = new IntersectionObserver(callback, options);
+
+    useEffect(() => {
+
+        const elements = document.querySelectorAll('.videos');
+
+        elements.forEach((ele) => {
+            observer.observe(ele);
+        })
+
+        return () => {
+            observer.disconnect();
+        }
+
+    }, [posts])
     return (
         <div>
             {
