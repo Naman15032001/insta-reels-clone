@@ -2,6 +2,8 @@
 
 # Hosted url - https://reels-clone-ad8d8.web.app
 
+# Firebase hoisting 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
